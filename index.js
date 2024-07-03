@@ -24,8 +24,8 @@ function calculadora(){
     }
 }
 function calcularadicao() {
-    let num1 = prompt("Digite o primeiro algarismo: ");
-    let num2 = prompt("Digite o segundo algarismo: ");
+    let num1 = +prompt("Digite o primeiro algarismo: ");
+    let num2 = +prompt("Digite o segundo algarismo: ");
     
     let resultado = Number(num1) + Number(num2);
     console.log("Resposta: ", resultado);
@@ -33,8 +33,8 @@ function calcularadicao() {
 }
 
 function calcularsubtracao(){
-    let num1 = prompt("Digite o primeiro algarismo: ");
-    let num2 = prompt("Digite o segundo algarismo: ");
+    let num1 = +prompt("Digite o primeiro algarismo: ");
+    let num2 = +prompt("Digite o segundo algarismo: ");
     
     let resultado = Number(num1) - Number(num2);
     console.log("Resposta: ", resultado);
@@ -42,16 +42,16 @@ function calcularsubtracao(){
 
 }
 function calcularmultiplicacao(){
-    let num1 = prompt("Digite o primeiro algarismo: ");
-    let num2 = prompt("Digite o segundo algarismo: ");
+    let num1 = +prompt("Digite o primeiro algarismo: ");
+    let num2 = +prompt("Digite o segundo algarismo: ");
 
     let resultado = Number(num1) * Number(num2);
     console.log("Resposta: ", resultado);
     exibir();
 }
 function calculardivisao(){
-    let dividendo = prompt("Digite o primeiro algarismo: ");
-    let divisor = prompt("Digite o segundo algarismo: ");
+    let dividendo = +prompt("Digite o primeiro algarismo: ");
+    let divisor = +prompt("Digite o segundo algarismo: ");
 
     if  (Number(divisor) !== 0) {
         let resultado = Number(dividendo) / Number(divisor);
@@ -62,15 +62,23 @@ function calculardivisao(){
     exibir();
 }
 function calcularporcentagem(){
-    let numero = prompt("Digite o numero: ");
-    let porcentagem = prompt("Digite a porcentagem a ser calculada: ");
+    let numero = +prompt("Digite o numero: ");
+    let porcentagem = +prompt("Digite a porcentagem a ser calculada: ");
     
     let resultado = (Number(porcentagem)/100)* Number(numero);
     console.log("Resultado da porcentagem: ", resultado);
     console.log("Resposta: ");
     exibir();
 }
-
-    
-
-calculadora();
+function exibir(){
+    let continuar = prompt("Deseja fazer outra operação. Sim ou não?");
+    if(continuar === 's'){
+        calculadora();
+    } else if (continuar === 'n') {
+        return;
+    } else {
+        console.log("Opção invalida. Didite 's' para sim e 'n' para não")
+        exibir();
+    }
+}
+    calculadora();
