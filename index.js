@@ -72,9 +72,10 @@ function calcularporcentagem(){
 }
 function exibir(){
     let continuar = prompt("Deseja fazer outra operação. Sim ou não?");
-    if(continuar === 's'){
+    if(continuar === 's' || continuar === 'S'){
         calculadora();
-    } else if (continuar === 'n') {
+        exibir();
+    } else if (continuar === 'n' || continuar === 'N') {
         return;
     } else {
         console.log("Opção invalida. Didite 's' para sim e 'n' para não")
